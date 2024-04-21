@@ -11,7 +11,6 @@ program.parse(process.argv);
 
 const options = program.opts();
 
-// TODO: рефакторити
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
@@ -40,4 +39,3 @@ async function invokeAction({ action, id, name, email, phone }) {
 }
 
 invokeAction(options);
-// .then(console.log).catch(console.error);

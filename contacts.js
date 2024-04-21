@@ -14,13 +14,11 @@ function writeContacts(contacts) {
 }
 
 async function listContacts() {
-  // ...твій код. Повертає масив контактів.
   const contacts = await readContacts();
   return contacts;
 }
 
 async function getContactById(contactId) {
-  // ...твій код. Повертає об'єкт контакту з таким id. Повертає null, якщо контакт з таким id не знайдений.
   const contacts = await readContacts();
   const contact = contacts.find((contact) => contact.id === contactId);
   if (typeof contact === undefined) {
@@ -30,7 +28,6 @@ async function getContactById(contactId) {
 }
 
 async function removeContact(contactId) {
-  // ...твій код. Повертає об'єкт видаленого контакту. Повертає null, якщо контакт з таким id не знайдений.
   const contacts = await readContacts();
   const index = contacts.findIndex((contact) => contact.id === contactId);
   if (index === -1) {
@@ -43,7 +40,6 @@ async function removeContact(contactId) {
 }
 
 async function addContact(name, email, phone) {
-  // ...твій код. Повертає об'єкт доданого контакту (з id).
   const contacts = await readContacts();
   const newContact = { name, email, phone, id: crypto.randomUUID() };
   contacts.push(newContact);
